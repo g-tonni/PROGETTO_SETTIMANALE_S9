@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Row, Col, Card, Spinner } from 'react-bootstrap'
+import { Row, Col, Card, Spinner, Alert } from 'react-bootstrap'
 
 class FilmRow extends Component {
   state = {
@@ -29,6 +29,7 @@ class FilmRow extends Component {
         console.log('ERRORE: ', err)
         this.setState({
           loading: false,
+          error: true,
         })
       })
   }
@@ -49,6 +50,11 @@ class FilmRow extends Component {
               <div className="text-center">
                 <Spinner animation="border" variant="light" />
               </div>
+            )}
+            {this.state.error && (
+              <Alert className="bg-danger bg-opacity-50 text-light border border-1 border-danger">
+                Errore nel caricamento delle risorse
+              </Alert>
             )}
             {this.state.arrFilm.slice(0, 6).map((film) => {
               return (
