@@ -11,7 +11,12 @@ import accountKids from '../assets/kids_icon.png'
 
 function NetflixNavbar(props) {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      data-bs-theme="dark"
+      className="bg-nav"
+    >
       <Container fluid className="px-4">
         <Navbar.Brand href="#">
           <img src={logo} alt="logo" height="40" />
