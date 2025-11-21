@@ -18,7 +18,7 @@ class FilmRow extends Component {
         }
       })
       .then((data) => {
-        console.log(data.Search)
+        // console.log(data.Search)
 
         this.setState({
           arrFilm: data.Search,
